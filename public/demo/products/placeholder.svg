@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" role="img" aria-label="Product placeholder">
+  <rect width="390" height="844" fill="#0f172a"/>
+  <rect x="32" y="120" width="326" height="326" rx="24" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <text x="195" y="420" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="18" text-anchor="middle">Demo product</text>
+</svg>
