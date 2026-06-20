@@ -46,6 +46,12 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
 
+      - name: Prepare application environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate --force --no-interaction
+          php artisan jwt:secret --force --no-interaction
+
       - name: Check code style (Pint)
         run: ./vendor/bin/pint --test
 
