@@ -1,7 +1,7 @@
 # Laravel Marketplace Platform API
 
 [![CI](https://github.com/sameh-bakleh/laravel-marketplace-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/sameh-bakleh/laravel-marketplace-platform/actions/workflows/ci.yml)
-![PHP 8.3+](https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white)
+![PHP 8.4+](https://img.shields.io/badge/PHP-8.4%2B-777BB4?logo=php&logoColor=white)
 ![Laravel 13](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
@@ -76,7 +76,7 @@ vendor/bin/pint --test
 
 | Skill | Evidence |
 |-------|----------|
-| Laravel 13 / PHP 8.3 | `composer.json`, typed services/controllers |
+| Laravel 13 / PHP 8.4 | `composer.json`, typed services/controllers |
 | JWT authentication | Register, login, refresh, logout (`php-open-source-saver/jwt-auth`) |
 | RBAC | `EnsureUserRole` middleware, seller/admin route groups |
 | Repository + service layer | `app/Repositories/`, `app/Services/` |

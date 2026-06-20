@@ -4,7 +4,7 @@
 
 | Service | Image | Host port |
 |---------|-------|-----------|
-| `app` | PHP 8.3 CLI (built from `Dockerfile`) | **8000** |
+| `app` | PHP 8.4 CLI (built from `Dockerfile`) | **8000** |
 | `mysql` | MySQL 8.0 | 33060 |
 | `redis` | Redis 7 Alpine | 63790 |
 
