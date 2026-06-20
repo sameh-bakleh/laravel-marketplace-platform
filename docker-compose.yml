@@ -36,6 +36,7 @@ services:
              php artisan key:generate --force || true &&
              php artisan jwt:secret --force || true &&
              php artisan migrate --force &&
+             php artisan demo:sync-product-images &&
              php artisan db:seed --force &&
              php artisan serve --host=0.0.0.0 --port=8000"
 

@@ -19,7 +19,7 @@ class ProductRepository implements ProductRepositoryInterface
 
         $this->applyFilters($q, $filters);
 
-        return $q->orderByDesc('id')->paginate($perPage);
+        return $q->orderBy('title')->paginate($perPage);
     }
 
     public function paginateForSeller(User $seller, array $filters, int $perPage = 15): LengthAwarePaginator

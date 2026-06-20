@@ -14,8 +14,9 @@ On first start the app container runs:
 2. `php artisan key:generate` (if needed)
 3. `php artisan jwt:secret` (if needed)
 4. `php artisan migrate --force`
-5. `php artisan db:seed --force`
-6. `php artisan serve --host=0.0.0.0 --port=8000`
+5. `php artisan demo:sync-product-images`
+6. `php artisan db:seed --force`
+7. `php artisan serve --host=0.0.0.0 --port=8000`
 
 ## Commands
 

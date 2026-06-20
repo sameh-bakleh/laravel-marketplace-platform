@@ -68,6 +68,26 @@ class MobileClientApiTest extends TestCase
             ->assertJsonMissingPath('data.0.title');
     }
 
+    public function test_mobile_products_use_external_image_urls(): void
+    {
+        $seller = User::factory()->seller()->create();
+        $product = Product::factory()->create([
+            'seller_id' => $seller->id,
+            'status' => 'published',
+            'title' => 'Photo Sample',
+        ]);
+        $product->images()->create([
+            'path' => '/demo/products/photo-sample.jpg',
+            'disk' => 'demo',
+            'sort_order' => 0,
+        ]);
+        $buyer = User::factory()->create();
+
+        $this->getJson('/api/products/'.$product->id, $this->bearer($buyer))
+            ->assertOk()
+            ->assertJsonPath('image_url', url('/demo/products/photo-sample.jpg'));
+    }
+
     public function test_mobile_product_show_is_unwrapped(): void
     {
         $seller = User::factory()->seller()->create();

@@ -5,7 +5,15 @@
 ![Laravel 13](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
-**Production-style multi-vendor marketplace backend** — JWT auth, catalog, cart, checkout, orders, favorites, Redis listing cache, OpenAPI, Docker, PHPUnit, and an **iOS-ready mobile contract** for [`ios-marketplace-product-app`](https://github.com/sameh-bakleh/ios-marketplace-product-app).
+📓 [Changelog](CHANGELOG.md)
+
+| | |
+|---|---|
+| **Repo** | [`laravel-marketplace-platform`](https://github.com/sameh-bakleh/laravel-marketplace-platform) |
+| **Stack** | Laravel 13 · PHP 8.4 · JWT · MySQL · Redis · Docker · OpenAPI |
+| **Mobile pairing** | [`ios-marketplace-product-app`](https://github.com/sameh-bakleh/ios-marketplace-product-app) |
+
+**Production-style multi-vendor marketplace backend** — JWT auth, catalog, cart, checkout, orders, favorites, Redis listing cache, OpenAPI, Docker, PHPUnit, and an **iOS-ready mobile contract** for the SwiftUI portfolio client above.
 
 > **30-second summary for recruiters:** Laravel REST API for a commerce marketplace with seller/admin roles, validated HTTP boundaries, repository-backed services, and automated tests. Ships two API surfaces: versioned `/api/v1/*` for full marketplace flows and unversioned `/api/*` endpoints matched to the SwiftUI portfolio client.
 
@@ -147,7 +155,9 @@ composer install
 cp .env.example .env
 php artisan key:generate
 php artisan jwt:secret --force
-php artisan migrate --seed
+php artisan migrate
+php artisan demo:sync-product-images
+php artisan db:seed
 php artisan serve
 ```
 
@@ -157,10 +167,12 @@ Password for all demo users: **`password`**
 
 | Email | Role | Use for |
 |-------|------|---------|
-| `demo@example.com` | Buyer | **iOS app login** (pre-seeded favorites) |
+| `demo@example.com` | Buyer | **iOS app login** (3 pre-seeded favorites) |
 | `buyer@marketplace.test` | Buyer | API exploration |
 | `seller@marketplace.test` | Seller | Seller product CRUD |
 | `admin@marketplace.test` | Admin | Category admin |
+
+After `db:seed`, the catalog includes **24 published products** across 4 categories, each with a **local JPEG placeholder** served from `/demo/products/*.jpg` (run `php artisan demo:sync-product-images` once to download them).
 
 ---
 

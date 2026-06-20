@@ -5,6 +5,7 @@ namespace App\Http\Resources\Mobile;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 /** @mixin Product */
 class MobileProductResource extends JsonResource
@@ -18,6 +19,7 @@ class MobileProductResource extends JsonResource
             'name' => $this->title,
             'description' => $this->description,
             'price' => (string) $this->price,
+            'compare_at_price' => $this->compare_at_price !== null ? (string) $this->compare_at_price : null,
             'currency' => config('marketplace.default_currency', 'EUR'),
             'image_url' => $this->resolveImageUrl($request),
             'category' => $this->relationLoaded('category') ? $this->category?->name : null,
@@ -35,6 +37,6 @@ class MobileProductResource extends JsonResource
 
         $slug = $this->slug ?: 'product';
 
-        return url('/demo/products/placeholder.svg');
+        return url('/demo/products/'.Str::slug($this->title ?: $slug).'.jpg');
     }
 }

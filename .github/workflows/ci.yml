@@ -59,3 +59,6 @@ jobs:
         run: php artisan test
         env:
           APP_ENV: testing
+
+      - name: Composer audit
+        run: composer audit
